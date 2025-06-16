@@ -1,0 +1,42 @@
+{
+	"name": "open-source-stack",
+	"version": "1.0.0",
+	"description": "Minimal open-source stack to help you ship an open-source package in TS",
+	"scripts": {
+		"build": "pnpm run --filter=\"./packages/**/*\" build",
+		"build:watch": "pnpm build && pnpm run --filter=\"./packages/**/*\" --parallel build --watch",
+		"clean": "git clean -fdX .",
+		"clean:build": "git clean -fdx -e node_modules .",
+		"typecheck": "pnpm run --filter=\"./packages/**/*\" --parallel typecheck",
+		"test": "pnpm run --filter=\"./packages/**/*\" --parallel test",
+		"test:cov": "pnpm run --filter=\"./packages/**/*\" --parallel test:cov",
+		"dev": "pnpm build && pnpm run --parallel dev",
+		"check": "biome check .",
+		"check:fix": "biome check --fix .",
+		"changeset": "changeset",
+		"release": "changeset publish",
+		"local-release": "changeset version && changeset publish",
+		"version": "changeset version"
+	},
+	"author": "forge-42",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/forge-42/open-source-stack.git"
+	},
+	"bugs": {
+		"url": "https://github.com/forge-42/open-source-stack/issues"
+	},
+	"homepage": "https://github.com/forge-42/open-source-stack#readme",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@changesets/cli": "^2.29.0",
+		"@types/node": "^20.17.30",
+		"lefthook": "^1.11.10"
+	},
+	"packageManager": "pnpm@10.6.5",
+	"engines": {
+		"pnpm": ">=10.6.5",
+		"node": ">=20.0.0"
+	}
+}

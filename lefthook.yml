@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      run: pnpm run check --staged --fix --no-errors-on-unmatched
+      stage_fixed: true
+    typecheck:
+      run: pnpm run typecheck
+    test:
+      run: pnpm run test
