@@ -1,6 +1,6 @@
 
 
-# 📦 web-events
+# 📦 @forge42/web-events
 
 **A tiny web-standards based utility for event-driven web apps.**
 
@@ -27,9 +27,9 @@ Leverages [`@standard-schema/spec`](https://www.npmjs.com/package/@standard-sche
 ## 📦 Installation
 
 ```bash
-npm install web-events
+npm install @forge42/web-events
 # or
-pnpm add web-events
+pnpm add @forge42/web-events
 ```
 
 ## 📖 Usage
@@ -37,7 +37,7 @@ pnpm add web-events
 ### Core API
 
 ```ts
-import { registerEvent } from "web-events"
+import { registerEvent } from "@forge42/web-events"
 import { z } from "zod"
 
 // Define your schema
@@ -89,10 +89,10 @@ unsubscribe()
 
 ### React
 
-You can also use `web-events` in a React application. It comes with a React specific API that allows you to register and listen to events in a more React-friendly way.
+You can also use `@forge42/web-events` in a React application. It comes with a React specific API that allows you to register and listen to events in a more React-friendly way.
 
 ```tsx
-import { registerReactEvent } from "web-events/react"
+import { registerReactEvent } from "@forge42/web-events/react"
 import { z } from "zod"
 const UserLoggedIn = z.object({
 	userId: z.string(),
@@ -165,11 +165,11 @@ const UserLoggedIn = z.object({
 
 
 ### Framework Integration
-You can easily integrate `web-events` with popular frameworks like React, Vue, or Svelte. Here's an example for React:
+You can easily integrate `@forge42/web-events` with popular frameworks like React, Vue, or Svelte. Here's an example for React:
 
 ```tsx
 import React, { useEffect } from "react"
-import { registerEvent } from "web-events"
+import { registerEvent } from "@forge42/web-events"
 
 const UserLoggedIn = z.object({
 	userId: z.string(),

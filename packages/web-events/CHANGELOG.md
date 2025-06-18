@@ -1,4 +1,4 @@
-# web-events
+# @forge42/web-events
 
 ## 1.0.0
 

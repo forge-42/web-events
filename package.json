@@ -1,5 +1,5 @@
 {
-	"name": "web-events",
+	"name": "@forge42/web-events",
 	"version": "0.0.0",
 	"description": "Minimal open-source stack to help you ship an open-source package in TS",
 	"scripts": {

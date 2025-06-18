@@ -1,6 +1,6 @@
 
 import type { MetaFunction } from "react-router";
-import { registerReactEvent } from "web-events/react";
+import { registerReactEvent } from "@forge42/web-events/react";
 import { z } from "zod";
 export const meta: MetaFunction = () => {
   return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }];
