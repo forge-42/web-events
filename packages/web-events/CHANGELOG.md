@@ -4,6 +4,12 @@
 
 ### Major Changes
 
+- 52bf5ce: Initial release
+
+## 1.0.0
+
+### Major Changes
+
 - 9374b32: Initial release
 
 ## 1.1.2
