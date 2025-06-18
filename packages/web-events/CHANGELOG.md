@@ -1,5 +1,11 @@
 # web-events
 
+## 1.0.0
+
+### Major Changes
+
+- 9374b32: Initial release
+
 ## 1.1.2
 
 ### Patch Changes
