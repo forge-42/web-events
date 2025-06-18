@@ -5,10 +5,10 @@
 **A tiny web-standards based utility for event-driven web apps.**
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/forge-42/web-events?style=social)
-![npm](https://img.shields.io/npm/v/web-events?style=plastic)
 ![GitHub](https://img.shields.io/github/license/forge-42/web-events?style=plastic)
-![npm](https://img.shields.io/npm/dy/web-events?style=plastic)
-![npm](https://img.shields.io/npm/dw/web-events?style=plastic)
+![npm](https://img.shields.io/npm/v/@forge42/web-events?style=plastic)
+![npm](https://img.shields.io/npm/dy/@forge42/web-events?style=plastic)
+![npm](https://img.shields.io/npm/dw/@forge42/web-events?style=plastic)
 ![GitHub top language](https://img.shields.io/github/languages/top/forge-42/web-events?style=plastic)
 
 
