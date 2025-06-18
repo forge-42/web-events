@@ -1,4 +1,4 @@
-# open-source-stack
+# web-events
 
 ## 1.1.2
 
@@ -18,4 +18,4 @@
 ### Minor Changes
 
 - f2fbd38: Added changesets to the project
-- e051f2f: We have migrated the open-source-stack to use pnpm workspaces with changesets instead of the old npm approach with npm workspaces.
+- e051f2f: We have migrated the web-events to use pnpm workspaces with changesets instead of the old npm approach with npm workspaces.

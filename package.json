@@ -1,5 +1,5 @@
 {
-	"name": "open-source-stack",
+	"name": "web-events",
 	"version": "1.0.0",
 	"description": "Minimal open-source stack to help you ship an open-source package in TS",
 	"scripts": {
@@ -22,12 +22,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/forge-42/open-source-stack.git"
+		"url": "https://github.com/forge-42/web-events.git"
 	},
 	"bugs": {
-		"url": "https://github.com/forge-42/open-source-stack/issues"
+		"url": "https://github.com/forge-42/web-events/issues"
 	},
-	"homepage": "https://github.com/forge-42/open-source-stack#readme",
+	"homepage": "https://github.com/forge-42/web-events#readme",
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@changesets/cli": "^2.29.0",
