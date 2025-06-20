@@ -1,5 +1,11 @@
 # @forge42/web-events
 
+## 1.2.0
+
+### Minor Changes
+
+- f2c6b7d: Changed the underlying handler to EventTarget to support server-side events
+
 ## 1.1.0
 
 ### Minor Changes
