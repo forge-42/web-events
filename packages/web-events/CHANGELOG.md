@@ -1,5 +1,11 @@
 # @forge42/web-events
 
+## 1.1.0
+
+### Minor Changes
+
+- a1045d7: readme update
+
 ## 1.0.0
 
 ### Major Changes
