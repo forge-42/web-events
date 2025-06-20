@@ -4,23 +4,17 @@ import { standardValidate } from "./validate"
 export type EventCallback<T extends StandardSchemaV1> = (data: StandardSchemaV1.InferOutput<T>) => void
 
 export const registerEvent = <T extends StandardSchemaV1>(name: string, schema: T, eventInit?: CustomEventInit) => {
+	const emitter = new EventTarget()
 	const dispatch = async (data: StandardSchemaV1.InferInput<typeof schema>) => {
-		if (typeof window === "undefined") {
-			return undefined
-		}
 		const result = await standardValidate<T>(schema, data)
 		const event = new CustomEvent(name, {
 			...eventInit,
 			detail: result,
 		})
-		window.dispatchEvent(event)
+		emitter.dispatchEvent(event)
 	}
 
 	const listener = (onEvent: EventCallback<T>) => {
-		if (typeof window === "undefined") {
-			return () => {}
-		}
-
 		const handler = async (event: Event) => {
 			if (event.type !== name) return
 			const e = event as CustomEvent<StandardSchemaV1.InferOutput<T>>
@@ -29,8 +23,8 @@ export const registerEvent = <T extends StandardSchemaV1>(name: string, schema: 
 
 			onEvent(data)
 		}
-		window.addEventListener(name, handler)
-		return () => window.removeEventListener(name, handler)
+		emitter.addEventListener(name, handler)
+		return () => emitter.removeEventListener(name, handler)
 	}
 
 	return [dispatch, listener] as const

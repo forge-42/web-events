@@ -12,7 +12,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/forge-42/web-events?style=plastic)
 
 
-Leverages [`@standard-schema/spec`](https://www.npmjs.com/package/@standard-schema/spec) to safely dispatch and listen to custom events in the browser.
+Leverages [`@standard-schema/spec`](https://www.npmjs.com/package/@standard-schema/spec) to safely dispatch and listen to custom events in the browser OR the server by using the `EventTarget` interface.
 
 
 ## ✨ Features
@@ -35,6 +35,8 @@ pnpm add @forge42/web-events
 ## 📖 Usage
 
 ### Core API
+
+This works both on the client and server side, as it uses the `EventTarget` interface.
 
 ```ts
 import { registerEvent } from "@forge42/web-events"
@@ -94,6 +96,7 @@ You can also use `@forge42/web-events` in a React application. It comes with a R
 ```tsx
 import { registerReactEvent } from "@forge42/web-events/react"
 import { z } from "zod"
+// Define your schema
 const UserLoggedIn = z.object({
 	userId: z.string(),
 	timestamp: z.number(),
@@ -105,12 +108,10 @@ const [dispatchUserLogin, useUserLoggedInEvent] = registerReactEvent("user:logge
 export default function UserComponent() {
 	const userLoggedIn = useUserLoggedInEvent()
 
-	const handleLogin = () => {
-		dispatchUserLogin({
+	const handleLogin = () => dispatchUserLogin({
 			userId: "abc123",
 			timestamp: Date.now(),
 		})
-	}
 
 	return (
 		<div>

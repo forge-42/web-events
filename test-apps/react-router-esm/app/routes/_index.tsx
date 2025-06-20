@@ -1,10 +1,29 @@
 
 import type { MetaFunction } from "react-router";
 import { registerReactEvent } from "@forge42/web-events/react";
+import { registerEvent } from "@forge42/web-events";
 import { z } from "zod";
 export const meta: MetaFunction = () => {
   return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }];
 };
+
+const [dispatchServer, listenerServer] = registerEvent("server-test", z.object({
+  message: z.string(),
+  count: z.number().optional(),
+  date: z.date().optional(),
+}));
+
+export const loader = async () => {
+  // Simulate server-side event dispatch
+  setTimeout(() => {
+    dispatchServer({ message: "Hello from the server!", count: 100, date: new Date() });
+  }, 1000);
+
+  listenerServer((data) => {
+    console.log("Server event received:", data);
+  });
+  return {};
+}
 
 const [dispatch, useEventListener ] = registerReactEvent("test", z.object({
   message: z.string(),
