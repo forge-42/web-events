@@ -1,5 +1,13 @@
 # @forge42/web-events
 
+## 1.2.1
+
+### Patch Changes
+
+- 86cec29: Added support for custom event target in the `registerReactEvent` function.
+
+  Made the registered events more performant by reusing the same event target for all events.
+
 ## 1.2.0
 
 ### Minor Changes
