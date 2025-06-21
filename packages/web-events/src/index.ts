@@ -3,12 +3,18 @@ import { standardValidate } from "./validate"
 
 export type EventCallback<T extends StandardSchemaV1> = (data: StandardSchemaV1.InferOutput<T>) => void
 
-export const registerEvent = <T extends StandardSchemaV1>(name: string, schema: T, eventInit?: CustomEventInit) => {
-	const emitter = new EventTarget()
+const defaultEmitter = new EventTarget()
+
+export interface ExtendedEventEmit extends EventInit {
+	emitter?: EventTarget
+}
+
+export const registerEvent = <T extends StandardSchemaV1>(name: string, schema: T, eventInit?: ExtendedEventEmit) => {
+	const { emitter = defaultEmitter, ...rest } = eventInit || {}
 	const dispatch = async (data: StandardSchemaV1.InferInput<typeof schema>) => {
 		const result = await standardValidate<T>(schema, data)
 		const event = new CustomEvent(name, {
-			...eventInit,
+			...rest,
 			detail: result,
 		})
 		emitter.dispatchEvent(event)

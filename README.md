@@ -89,6 +89,18 @@ const unsubscribe = listener((data) => {
 unsubscribe()
 ```
 
+You can also pass in a third optional parameter to the `registerEvent` function to specify the event init options, such as `bubbles`, `cancelable`, or `composed`. This allows you to control the behavior of the event in the DOM.
+
+It also takes in an optional property `emitter` which can be used to specify the `EventTarget` that will emit the event. This is useful if you want to use a custom event target instead of the default one.
+
+```ts
+const [dispatch, listener] = registerEvent("user:logged-in", UserLoggedIn, {
+	bubbles: true,
+	composed: true,
+	emitter: document // or any other EventTarget
+})
+```
+
 ### React
 
 You can also use `@forge42/web-events` in a React application. It comes with a React specific API that allows you to register and listen to events in a more React-friendly way.

@@ -1,8 +1,12 @@
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import { useEffect, useState } from "react"
-import { type EventCallback, registerEvent } from "."
+import { type EventCallback, type ExtendedEventEmit, registerEvent } from "."
 
-export const registerReactEvent = <T extends StandardSchemaV1>(name: string, schema: T, eventInit?: EventInit) => {
+export const registerReactEvent = <T extends StandardSchemaV1>(
+	name: string,
+	schema: T,
+	eventInit?: ExtendedEventEmit
+) => {
 	const [dispatch, listener] = registerEvent(name, schema, eventInit)
 
 	const useEventListener = (args?: { onEvent?: EventCallback<T> }) => {
