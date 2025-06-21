@@ -1,5 +1,11 @@
 # @forge42/web-events
 
+## 1.3.0
+
+### Minor Changes
+
+- 847a706: Added the useEvent hook
+
 ## 1.2.1
 
 ### Patch Changes
