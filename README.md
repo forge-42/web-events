@@ -162,7 +162,43 @@ export default function UserComponent() {
 		</div>
 	)
 }
+
 ```
+
+#### `useEvent` hook
+
+The `useEvent` hook is a custom React hook that allows you to listen to events in a more declarative way. It accepts an initialized `registerEvent` instance and returns the data.
+
+```tsx
+import { useEvent } from "@forge42/web-events/react"
+
+const messageSentEvent = registerEvent("message:sent", z.object({
+  message: z.string(),
+  count: z.number().optional(),
+  date: z.date().optional(),
+}));
+
+export default function MessageComponent() {
+	const messageSent = useEvent(messageSentEvent, {
+		onEvent: (data) => {
+			console.log("Message sent:", data);
+		},
+	});
+
+	return (
+		<div>
+			{messageSent ? (
+				<p>Message: {messageSent.message}, Count: {messageSent.count}, Date: {messageSent.date?.toISOString()}</p>
+			) : (
+				<p>No message sent yet.</p>
+			)}
+		</div>
+	);
+}
+
+
+```
+
 
 
 ### Schema Validation
